@@ -1,0 +1,18 @@
+dist: bionic
+
+script:
+  - free -h
+  - df -h
+  
+jobs:
+  include:
+    - arch: ppc64le
+      env: TYPE="P Container"
+    - os: linux-ppc64le
+      env: TYPE="P VM"
+    - arch: amd64
+      env: TYPE="X VM"
+    - arch: s390x
+      env: TYPE="Z Container"
+    - arch: arm64
+      env: TYPE="A Container"
