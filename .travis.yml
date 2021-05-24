@@ -3,6 +3,11 @@ dist: bionic
 script:
   - free -h
   - df -h
+  - cat /proc/cpuinfo
+  - |
+    cat /proc/cpuinfo > /tmp/my-cpuinfo
+    sudo mount --bind /tmp/my-cpuinfo /proc/cpuinfo
+
   
 jobs:
   include:
